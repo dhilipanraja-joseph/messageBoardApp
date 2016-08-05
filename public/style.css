@@ -1,0 +1,23 @@
+body{
+  background-color: #b3b3b3;
+}
+.postSnips{
+  padding: 10px;
+  height: 200px;
+  width: 500px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: white;
+  border: 0px solid #000;
+  border-radius: 10px;
+}
+.postHeader,.postFooter{
+  font-size: 10px;
+  /* padding: 5px; */
+  height :14%;
+}
+.postBody{
+  font-size: 16px;
+  padding: 0;
+  height :50%;
+}

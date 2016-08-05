@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    title MessageBoard
+    script(src="https://code.jquery.com/jquery-3.1.0.min.js")
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+    script(src="main.js")
+    link(href="style.css", rel="stylesheet")
+  body
+    .container.text-center
+      h1 Message Board
+      br
+      br
+      .row
+        form#postMess.form-inline
+          .form-group.row
+            input#inputPost.form-control(type="text",size="40",placeholder="Post here....")
+            button#post-btn.btn.btn-default(type="submit") Add
+      if posts !== []
+        each post in posts
+          .postSnips.row
+            .postHeader.row
+
+            .postBody.row #{post.message}
+
+            .postFooter.row
+              .row(data-id = post.id)
+                button.postModify.btn.btn-default Modify
+                button.postDelete.btn.btn-danger Delete
+              .row
+                p posted on : #{post.created_on}
+                p modified on : #{post.modified_on}
+
+
+div#template.row.hidden
+  div.postHeader.row
+  div.postBody.row
+  div.postFooter.row
+    div.row
+      button.postModify.btn.btn-default Modify
+      button.postDelete.btn.btn-danger Delete
+    .row
+      p
+      p
