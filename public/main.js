@@ -13,6 +13,9 @@ function removePost(){
     type: "DELETE",
     url: `/post/${id}`,
     success: function (r) {
+      // $.html(r)
+      location.reload();
+
       // console.log(r);
     }
   });
@@ -28,6 +31,9 @@ function modifyPost(){
     contentType: 'application/json',
     data: JSON.stringify(message),
     success: function (r) {
+      // $.html(r);
+      // $(document.documentElement).empty().html(r);
+      location.reload();
       // console.log(r);
     }
   });
@@ -72,7 +78,10 @@ function newPost(e){
     contentType: 'application/json',
     data: JSON.stringify(message),
     success: function (r) {
-      console.log(r);
+      // $(document.documentElement).empty().html(r);
+      // console.log(r);
+      location.reload();
+
     }
   });
   // console.log(message);

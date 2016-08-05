@@ -65,7 +65,7 @@ app.put('/post/:id',(req,res,err)=>{
 
           if(err) return res.status(400).send(err);
 
-          else res.render('index',{"posts" : data});
+          else res.send(data);
         });
 });
 
@@ -75,7 +75,7 @@ app.delete('/post/:id',(req,res,err)=>{
 
             if(err) return res.status(400).send(err);
 
-            else res.render('index',{"posts" : data});
+            else res.send(data);
         });
 });
 
